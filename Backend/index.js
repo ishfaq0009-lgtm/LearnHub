@@ -6,8 +6,10 @@ import dbConnection from "./shared/config/db/dbconection.js";
 import userRouter from "./modules/user/user.route.js";
 import courseRouter from "./modules/courses/course.route.js";
 import contactRouter from "./modules/contact/contact.route.js";
+import dns from "node:dns";
 
 
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 const app = express();
 const allowedOrigins = (process.env.FRONTEND_URL || "http://localhost:5173")
   .split(",")
